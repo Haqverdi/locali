@@ -3,7 +3,9 @@ import { Row, Col, Layout, Typography, Table, Button } from 'antd';
 import AddForm from './components/AddForm';
 
 const renderItem = value => (
-  <div style={{ textOverflow: 'ellipsis', overflow: 'hidden', width: 250 }}>{value}</div>
+  <div style={{ textOverflow: 'ellipsis', overflow: 'hidden', width: 250 }}>
+    {value}
+  </div>
 );
 
 const columns = [
@@ -74,9 +76,15 @@ function App() {
   return (
     <Layout>
       <Layout.Header
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
       >
-        <Typography.Title style={{ color: 'white', margin: 0 }}>Locali</Typography.Title>
+        <Typography.Title style={{ color: 'white', margin: 0 }}>
+          Locali
+        </Typography.Title>
         <div>
           <Button htmlType="submit" icon="save" style={{}}>
             Save
@@ -92,10 +100,17 @@ function App() {
           </Button>
         </div>
       </Layout.Header>
-      <Layout.Content style={{ height: 'calc(100vh - 152px)', background: '#fff' }}>
+      <Layout.Content
+        style={{ height: 'calc(100vh - 152px)', background: '#fff' }}
+      >
         <Row style={{ display: 'flex', justifyContent: 'center' }}>
           <Col span={18}>
-            <Table dataSource={data} columns={columns} bordered pagination={false} />
+            <Table
+              dataSource={data}
+              columns={columns}
+              bordered
+              pagination={false}
+            />
           </Col>
         </Row>
       </Layout.Content>
